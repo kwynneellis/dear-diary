@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :mood_logs
+  has_many :moods, through: :mood_logs
+
   validates :email, :password, :first_name, :last_name, :date_of_birth, presence: true
   validates :email, :username, uniqueness: true
 end
