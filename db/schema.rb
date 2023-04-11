@@ -10,17 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_05_173322) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_111512) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_logs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.date "date"
+    t.bigint "mood_log_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mood_log_id"], name: "index_daily_logs_on_mood_log_id"
+    t.index ["user_id"], name: "index_daily_logs_on_user_id"
+  end
 
   create_table "mood_logs", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.date "date"
-    t.bigint "mood_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["mood_id"], name: "index_mood_logs_on_mood_id"
+    t.string "moods"
     t.index ["user_id"], name: "index_mood_logs_on_user_id"
   end
 
@@ -45,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_173322) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "mood_logs", "moods"
+  add_foreign_key "daily_logs", "mood_logs"
+  add_foreign_key "daily_logs", "users"
   add_foreign_key "mood_logs", "users"
 end
