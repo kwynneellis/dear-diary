@@ -1,0 +1,7 @@
+<h1>My Moods</h1>
+<% @my_mood_logs.each do |log| %>
+  <ul>
+    <li><%= log.date %>: <%= log.moods %>. User: <%= log.user.first_name %></li>
+  </ul>
+<% end %>
+<%= link_to "Add Mood", new_mood_log_path, class: "btn btn-primary" %>

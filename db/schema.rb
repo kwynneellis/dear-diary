@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_06_133252) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_111512) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,10 +27,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_133252) do
   create_table "mood_logs", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.date "date"
-    t.bigint "mood_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["mood_id"], name: "index_mood_logs_on_mood_id"
+    t.string "moods"
     t.index ["user_id"], name: "index_mood_logs_on_user_id"
   end
 
@@ -57,6 +56,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_133252) do
 
   add_foreign_key "daily_logs", "mood_logs"
   add_foreign_key "daily_logs", "users"
-  add_foreign_key "mood_logs", "moods"
   add_foreign_key "mood_logs", "users"
 end

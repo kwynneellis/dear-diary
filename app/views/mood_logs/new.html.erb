@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for(@mood_log) do |f| %>
+    <%= f.input :date, as: :date,
+                      html5: true,
+                      required: true,
+                      label: 'Date' %>
+    <%# <%= f.association :moods, as: :check_boxes %>
+    <%= f.input :moods,
+                as: :radio_buttons,
+                collection: ['happy', 'sad', 'scared', 'angry', 'surprised', 'disgusted'] %>
+    <%= f.submit %>
+  <% end %>
+</div>
