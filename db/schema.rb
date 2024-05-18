@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_18_130855) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_18_140837) do
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.boolean "is_active"
-    t.boolean "is_default"
-    t.boolean "is_int"
-    t.boolean "is_string"
-    t.boolean "is_text"
-    t.boolean "is_float"
-    t.boolean "is_duration"
-    t.boolean "is_boolean"
-    t.integer "min_scale"
-    t.integer "max_scale"
-    t.string "is_list"
+    t.boolean "is_active", default: true
+    t.boolean "is_default", default: false
+    t.boolean "is_int", default: false
+    t.boolean "is_string", default: false
+    t.boolean "is_text", default: false
+    t.boolean "is_float", default: false
+    t.boolean "is_duration", default: false
+    t.boolean "is_boolean", default: false
+    t.boolean "min_scale", default: false
+    t.boolean "max_scale", default: false
+    t.boolean "is_list", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
