@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_18_140837) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_18_160949) do
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -22,8 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_18_140837) do
     t.boolean "is_float", default: false
     t.boolean "is_duration", default: false
     t.boolean "is_boolean", default: false
-    t.boolean "min_scale", default: false
-    t.boolean "max_scale", default: false
+    t.integer "min_scale", default: 0
+    t.integer "max_scale", default: 10
     t.boolean "is_list", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
