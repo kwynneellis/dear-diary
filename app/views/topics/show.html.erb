@@ -1,0 +1,8 @@
+<small><%= link_to "Back", topics_path %></small>
+<hr>
+
+<h2><%= @topic.name %></h2>
+<small><%= link_to "Edit", edit_topic_path(@topic) %></small><br>
+<p>Description: <%= @topic.description %></p>
+<p>Active: <%= @topic.is_active %></p>
+<p>Default: <%= @topic.is_default %></p>

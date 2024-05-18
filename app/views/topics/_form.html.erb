@@ -1,0 +1,60 @@
+<%= form_with model: topic do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <% topic.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :is_active %>
+    <%= f.check_box :is_active%>
+  </div>
+  <div>
+    <%= f.label :is_default %>
+    <%= f.check_box :is_default %>
+  </div>
+  <div>
+    <%= f.label :is_string %>
+    <%= f.check_box :is_string %>
+  </div>
+  <div>
+    <%= f.label :is_text %>
+    <%= f.check_box :is_text %>
+  </div>
+  <div>
+    <%= f.label :is_float %>
+    <%= f.check_box :is_float %>
+  </div>
+  <div>
+    <%= f.label :is_duration %>
+    <%= f.check_box :is_duration %>
+  </div>
+  <div>
+    <%= f.label :is_boolean %>
+    <%= f.check_box :is_boolean %>
+  </div>
+  <div>
+    <%= f.label :is_list %>
+    <%= f.check_box :is_list %>
+  </div>
+  <div>
+    <%= f.label :is_int %>
+    <%= f.check_box :is_int %>
+  </div>
+  <div>
+    <%= f.label :min_scale %>
+    <%= f.number_field :min_scale %>
+  </div>
+  <div>
+    <%= f.label :max_scale %>
+    <%= f.number_field :max_scale %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<small><%= link_to "Home", root_path %></small>
+<hr>
+<small><%= link_to "+ Create", new_topic_path(@topic) %></small>
+<h2>Topics</h1>
+<ul>
+  <% @topics.each do |topic| %>
+    <li><%= link_to topic.name, topic %> → </li>
+  <% end %>
+</ul>
