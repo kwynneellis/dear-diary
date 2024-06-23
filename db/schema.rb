@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_23_140442) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_23_161740) do
   create_table "logs", force: :cascade do |t|
     t.integer "topic_id", null: false
     t.integer "as_int"
-    t.string "is_string"
-    t.text "is_text"
-    t.float "is_float"
-    t.integer "is_duration"
-    t.boolean "is_boolean"
+    t.string "as_string"
+    t.text "as_text"
+    t.float "as_float"
+    t.integer "as_duration"
+    t.boolean "as_boolean"
     t.integer "min_scale"
     t.integer "max_scale"
-    t.string "is_list"
+    t.string "as_list"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_logs_on_topic_id"

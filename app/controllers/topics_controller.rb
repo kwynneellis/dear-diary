@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @log = Log.new
   end
 
   def new

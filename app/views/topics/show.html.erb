@@ -3,6 +3,23 @@
 
 <h2><%= @topic.name %></h2>
 <small><%= link_to "Edit", edit_topic_path(@topic) %></small><br>
+<hr>
+
+<h4>Configure fields:</h4>
 <p>Description: <%= @topic.description %></p>
-<p>Active: <%= @topic.is_active %></p>
-<p>Default: <%= @topic.is_default %></p>
+<p>Active: <%= @topic.is_active ? "✅" : "-" %></p>
+<p>Default: <%= @topic.is_default ? "✅" : "-" %></p>
+<p>String: <%= @topic.is_string ? "✅" : "-" %></p>
+<p>Text: <%= @topic.is_text ? "✅" : "-" %></p>
+<p>Float: <%= @topic.is_float ? "✅" : "-" %></p>
+<p>Duration: <%= @topic.is_duration ? "✅" : "-" %></p>
+<p>Boolean: <%= @topic.is_boolean ? "✅" : "-" %></p>
+<p>List: <%= @topic.is_list ? "✅" : "-" %></p>
+<p>Integer: <%= @topic.is_int ? "✅" : "-" %></p>
+<p>Scale: <%= @topic.min_scale %> - <%= @topic.max_scale %></p>
+
+<hr>
+<div>
+  <h4>Log</h4>
+  <%= render "logs/form", topic: @topic, log: @log %>
+</div>

@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "pages#about"
 
-  resources :topics, only: [:index, :show, :new, :create, :edit, :update]
+  resources :topics, only: [:index, :show, :new, :create, :edit, :update] do
+    resources :logs, only: [:new, :create]
+  end
 end

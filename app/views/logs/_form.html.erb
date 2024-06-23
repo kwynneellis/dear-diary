@@ -1,0 +1,49 @@
+<%= form_with model: [ @topic, @log ] do |f| %>
+  <h4><%= @topic.description %></h4>
+
+  <% if @topic.is_text %>
+    <div>
+      <%= f.text_field :as_text %>
+    </div>
+  <% end %>
+
+  <% if @topic.is_int %>
+    <div>
+      <%= f.number_field :as_int %>
+    </div>
+  <% end %>
+
+  <% if @topic.is_string %>
+    <div>
+      <%= f.text_field :as_string %>
+    </div>
+  <% end %>
+
+  <% if @topic.is_float %>
+    <div>
+      <%= f.number_field :as_float %>
+    </div>
+  <% end %>
+
+  <% if @topic.is_duration %>
+    <div>
+      <%= f.number_field :as_duration %>
+    </div>
+  <% end %>
+
+  <% if @topic.is_boolean %>
+    <div>
+      <%= f.check_box :as_boolean %>
+    </div>
+  <% end %>
+
+  <% if @topic.is_list %>
+    <div>
+      <%= f.text_field :as_list %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
