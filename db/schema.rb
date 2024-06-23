@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_18_160949) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_23_140442) do
+  create_table "logs", force: :cascade do |t|
+    t.integer "topic_id", null: false
+    t.integer "as_int"
+    t.string "is_string"
+    t.text "is_text"
+    t.float "is_float"
+    t.integer "is_duration"
+    t.boolean "is_boolean"
+    t.integer "min_scale"
+    t.integer "max_scale"
+    t.string "is_list"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_logs_on_topic_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -29,4 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_18_160949) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "logs", "topics"
 end

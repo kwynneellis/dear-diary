@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  topic: one
+  as_int: 1
+  is_string: MyString
+  is_text: MyText
+  is_float: 1.5
+  is_duration: 1
+  is_boolean: false
+  min_scale: 1
+  max_scale: 1
+  is_list: MyString
+
+two:
+  topic: two
+  as_int: 1
+  is_string: MyString
+  is_text: MyText
+  is_float: 1.5
+  is_duration: 1
+  is_boolean: false
+  min_scale: 1
+  max_scale: 1
+  is_list: MyString
